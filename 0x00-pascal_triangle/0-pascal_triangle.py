@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 def pascal_triangle(n):
+    """Generates the pascal triangle up to n rows
+
+    Args:
+        n (int): number of rows
+
+    Returns:
+        array: pascal triangle
+    """
     if n <= 0:
         return []
     triangle = [[1]]
