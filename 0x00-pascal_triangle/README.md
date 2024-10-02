@@ -23,7 +23,7 @@ for row in triangle:
 
 For `n = 5`, the output will be:
 
-```
+```  none
 [1]
 [1, 1]
 [1, 2, 1]
