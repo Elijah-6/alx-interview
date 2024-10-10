@@ -1,18 +1,24 @@
 #!/usr/bin/python3
-
-"""unlock all locked boxes if you have the keys in the preemting box
-
-    Returns:
-       Boolean: true if all boxes are unlocked.
+"""
+This module provides functionality to determine if all the boxes in a list of
+locked boxes can be opened. Each box is numbered sequentially from 0 to n - 1
+and each box may contain keys to other boxes.
+Functions:
+    canUnlockAll(boxes): Determines if all the boxes can be opened.
 """
 
 def canUnlockAll(boxes):
-    opened = set(boxes[0])
-    todo = [box[0] for box in boxes if box[0] in opened]
-    while todo:
-        box = todo.pop()
-        for neighbor in boxes[box]:
-            if neighbor not in opened:
-                opened.add(neighbor)
-                todo.append(neighbor)
-    return len(opened) == len(boxes)
+    n = len(boxes)
+    unlocked = [False] * n
+    unlocked[0] = True
+    keys = boxes[0]
+
+    for key in keys:
+        if key < n and not unlocked[key]:
+            unlocked[key] = True
+            keys.extend(boxes[key])
+
+    for i in range(1, n):
+        if not unlocked[i]:
+            return False
+    return True
