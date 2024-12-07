@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+"""Island perimeter computing module.
+"""
 def island_perimeter(grid):
     """
     Calculate the perimeter of an island represented by 1s in a grid of 0s and 1s.
@@ -11,6 +12,9 @@ def island_perimeter(grid):
     (top, bottom, left, right). If a neighbor is water (0) or the cell is on the boundary of the grid, it 
     contributes to the perimeter.
     """
+    if type(grid) != list:
+        return 0;
+    
     rows = len(grid)
     cols = len(grid[0])
     perimeter = 0
