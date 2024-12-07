@@ -2,6 +2,7 @@
 """Island perimeter computing module.
 """
 
+
 def island_perimeter(grid):
     """
     Calculate the perimeter of an island represented by
@@ -14,12 +15,12 @@ def island_perimeter(grid):
     The function iterates through each cell in the grid.
     For each land cell (1), it checks its four neighbors
     (top, bottom, left, right). If a neighbor is water (0) or
-    the cell is on the boundary of the grid, it 
+    the cell is on the boundary of the grid, it
     contributes to the perimeter.
     """
-    if type(grid) != list:
-        return 0;
-    
+    if type(grid) is not list:
+        return 0
+
     rows = len(grid)
     cols = len(grid[0])
     perimeter = 0
